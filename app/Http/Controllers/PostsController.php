@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 use App\Services\PostsService;
 use Illuminate\Http\Request;
@@ -36,5 +37,16 @@ class PostsController extends Controller
     public function edit(Post $post)
     {
         return view('posts.edit', ['title' => 'Edit post', 'post' => $post]);
+    }
+
+    public function update(Post $post, UpdatePostRequest $request)
+    {
+        try {
+            $this->postsService->updatePost($post, $request->validated());
+        } catch (Exception $e) {
+
+        }
+
+        return redirect('/');
     }
 }

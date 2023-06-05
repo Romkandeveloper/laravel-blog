@@ -17,5 +17,16 @@ class PostsService {
 
         return $post;
     }
+
+    public function updatePost(Post $post, array $postData)
+    {
+        //some code...
+
+        $post->update($postData);
+
+        //mode code...
+
+        return $post;
+    }
 }
 

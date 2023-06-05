@@ -9,7 +9,7 @@
                     <p class="section__description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
                 </div>
                 <div class="inners">
-                    <form class="form" method="PUT" action="{{ route('posts.create') }}">
+                    <form class="form" method="PUT" action="{{ route('posts.update', $post->id) }}">
                         @csrf
 
                         <div class="w-100">
