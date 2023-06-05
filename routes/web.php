@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostsController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::prefix('posts')->group(function() {
-    Route::get('/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('posts.create');
-    Route::post('/', [\App\Http\Controllers\PostsController::class, 'store'])->name('posts.store');
+    Route::get('/create', [PostsController::class, 'create'])->name('posts.create');
+    Route::post('/', [PostsController::class, 'store'])->name('posts.store');
+    Route::get('/{post}/edit', [PostsController::class, 'edit'])->name('posts.edit');
+    Route::get('/{post}', [PostsController::class, 'edit'])->name('posts.update');
 });

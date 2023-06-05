@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePostRequest;
+use App\Models\Post;
 use App\Services\PostsService;
 use Illuminate\Http\Request;
 use Mockery\Exception;
@@ -29,6 +30,11 @@ class PostsController extends Controller
 
         }
 
-        return redirect()->route('/');
+        return redirect('/');
+    }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit', ['title' => 'Edit post', 'post' => $post]);
     }
 }
