@@ -9,8 +9,9 @@
                     <p class="section__description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
                 </div>
                 <div class="inners">
-                    <form class="form" method="PUT" action="{{ route('posts.update', $post->id) }}">
+                    <form class="form" method="POST" action="{{ route('posts.update', ['post' => $post->id]) }}">
                         @csrf
+                        @method('PUT')
 
                         <div class="w-100">
                             <input
@@ -44,8 +45,11 @@
                             @enderror
                         </div>
 
-                        <input type="submit" value="Update post" class="form__input form__input-half form__input-btn">
+                        <input type="submit" value="Update post" class="form__input form__input-btn">
+
                     </form>
+
+                    @include('components.posts.delete-btn')
                 </div>
             </div>
         </section>

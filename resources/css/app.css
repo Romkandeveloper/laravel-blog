@@ -541,6 +541,7 @@ a {
 
 .inners {
     display: flex;
+    flex-direction: column;
     justify-content: space-between
 }
 
@@ -596,6 +597,11 @@ a {
     margin-bottom: 20px;
     background-color: #fff;
     outline: none
+}
+
+.form__input-danger {
+    background-color: #721c24;
+    color: #fff !important;
 }
 
 .form__input::placeholder {

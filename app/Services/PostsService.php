@@ -24,9 +24,20 @@ class PostsService {
 
         $post->update($postData);
 
-        //mode code...
+        //more code...
 
         return $post;
+    }
+
+    public function deletePost(Post $post)
+    {
+        //some code...
+
+        $post->delete();
+
+        //more code...
+
+        return true;
     }
 }
 

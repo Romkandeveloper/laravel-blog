@@ -43,7 +43,7 @@
                             @enderror
                         </div>
 
-                        <input type="submit" value="Create post" class="form__input form__input-half form__input-btn">
+                        <input type="submit" value="Create post" class="form__input form__input-btn">
                     </form>
                 </div>
             </div>

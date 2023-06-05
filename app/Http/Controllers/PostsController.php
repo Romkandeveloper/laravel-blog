@@ -49,4 +49,15 @@ class PostsController extends Controller
 
         return redirect('/');
     }
+
+    public function destroy(Post $post)
+    {
+        try {
+            $this->postsService->deletePost($post);
+        } catch (Exception $e) {
+
+        }
+
+        return redirect('/');
+    }
 }
