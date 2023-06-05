@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('posts')->group(function() {
+    Route::get('/create', [\App\Http\Controllers\PostsController::class, 'create'])->name('posts.create');
+});
