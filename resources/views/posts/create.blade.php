@@ -9,10 +9,39 @@
                     <p class="section__description">Lorem ipsum dolor sit amet, consetetur sadipscing elitr amet</p>
                 </div>
                 <div class="inners">
-                    <form class="form">
-                        <input type="text" placeholder="Title" class="form__input">
-                        <textarea placeholder="Write your message" class="form__input form__input-all textarea"></textarea>
-                        <input type="button" value="Create post" class="form__input form__input-half form__input-btn">
+                    <form class="form" method="POST" action="{{ route('posts.store') }}">
+                        @csrf
+
+                        <div class="w-100">
+                            <input
+                                required
+                                type="text"
+                                name="title"
+                                placeholder="Title"
+                                class="form__input"
+                                minlength="5"
+                                maxlength="255"
+                            >
+                            @error('title')
+                            <div class="validation-error">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="w-100">
+                            <textarea
+                                required
+                                name="text"
+                                placeholder="Write your message"
+                                class="form__input form__input-all textarea"
+                                minlength="5"
+                                maxlength="2000"
+                            ></textarea>
+                            @error('text')
+                            <div class="validation-error">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <input type="submit" value="Create post" class="form__input form__input-half form__input-btn">
                     </form>
                 </div>
             </div>

@@ -570,8 +570,19 @@ a {
     margin-bottom: 20px
 }
 
+.w-100 {
+    width: 100%;
+}
+
+.validation-error {
+    color: darkred;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
 .form {
     max-width: 730px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
