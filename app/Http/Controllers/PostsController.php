@@ -18,6 +18,16 @@ class PostsController extends Controller
         $this->postsService = $postsService;
     }
 
+    public function index()
+    {
+
+    }
+
+    public function show(Post $post)
+    {
+        return view('posts.show', ['title' => $post->title, 'post' => $post]);
+    }
+
     public function create()
     {
         return view('posts.create', ['title' => 'Create post']);
@@ -26,12 +36,12 @@ class PostsController extends Controller
     public function store(StorePostRequest $request)
     {
         try {
-            $this->postsService->createPost($request->validated());
+            $post = $this->postsService->createPost($request->validated());
         } catch (Exception $e) {
 
         }
 
-        return redirect('/');
+        return redirect()->route('posts.show', ['post' => $post]);
     }
 
     public function edit(Post $post)
@@ -42,12 +52,12 @@ class PostsController extends Controller
     public function update(Post $post, UpdatePostRequest $request)
     {
         try {
-            $this->postsService->updatePost($post, $request->validated());
+            $post = $this->postsService->updatePost($post, $request->validated());
         } catch (Exception $e) {
 
         }
 
-        return redirect('/');
+        return redirect()->route('posts.show', ['post' => $post]);
     }
 
     public function destroy(Post $post)

@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () {return redirect()->route('posts.index');})->name('dashboard');
 
 Route::prefix('posts')->group(function() {
     Route::get('/create', [PostsController::class, 'create'])->name('posts.create');
@@ -23,4 +21,6 @@ Route::prefix('posts')->group(function() {
     Route::get('/{post}/edit', [PostsController::class, 'edit'])->name('posts.edit');
     Route::put('/{post}', [PostsController::class, 'update'])->name('posts.update');
     Route::delete('/{post}', [PostsController::class, 'destroy'])->name('posts.destroy');
+    Route::get('/', [PostsController::class, 'index'])->name('posts.index');
+    Route::get('/{post}', [PostsController::class, 'show'])->name('posts.show');
 });
