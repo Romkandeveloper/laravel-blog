@@ -1,0 +1,133 @@
+.card__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 2px solid #dddddd;
+    padding: 35px 0px
+}
+
+.card .card__item:last-child {
+    padding-bottom: 0px;
+    border-bottom: 0px
+}
+
+.card .card__item:first-child {
+    padding-top: 0px
+}
+
+.card__photo {
+    margin-right: 38px
+}
+
+.card__header {
+    padding: 18px 0 0 100px;
+    margin-bottom: 22px;
+    position: relative
+}
+
+.card__title {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #c0301c;
+    margin-bottom: 17px
+}
+
+.card__text {
+    text-align: justify
+}
+
+.card__date {
+    position: absolute;
+    font-size: 12px;
+    width: 80px;
+    padding: 19px 22px;
+    top: 0;
+    left: 0;
+    border: 2px solid #555;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700
+}
+
+.card__btn {
+    text-transform: uppercase;
+    color: #c0301c;
+    position: relative;
+    display: inline-block;
+    margin-top: 33px;
+    -webkit-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease
+}
+
+.card__btn:hover {
+    color: #fff
+}
+
+.card__btn:hover:before {
+    width: 225%
+}
+
+.card__btn:before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    left: -100%;
+    top: -25%;
+    display: inline-block;
+    background-color: #c0301c;
+    width: 0%;
+    height: 150%;
+    -webkit-transition: width 0.2s ease;
+    -o-transition: width 0.2s ease;
+    transition: width 0.2s ease
+}
+
+.card__text-color {
+    color: #c0301c
+}
+
+.card__img-shadow {
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
+}
+
+@media screen and (max-width:860px) {
+
+    .card__item{
+        -webkit-box-orient:vertical;
+        -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+        flex-direction:column;
+        -webkit-box-align:center;
+        -ms-flex-align:center;
+        align-items:center
+    }
+
+    .card__photo{
+        margin:0 0 10px 0
+    }
+
+    .card__img-shadow{
+        max-width:100%
+    }
+
+    .card__description{
+        max-width:460px;
+        width: 100%;
+    }
+
+    .card__btn{
+        margin-top:20px
+    }
+}
