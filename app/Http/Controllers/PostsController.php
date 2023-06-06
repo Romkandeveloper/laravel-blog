@@ -11,6 +11,8 @@ use Mockery\Exception;
 
 class PostsController extends Controller
 {
+    const DEFAULT_PAGINATION_COUNT = 5;
+
     public  $postsService;
 
     public function __construct(PostsService $postsService)
@@ -20,7 +22,8 @@ class PostsController extends Controller
 
     public function index()
     {
-
+        $posts = Post::orderBy('created_at', 'desc')->paginate(self::DEFAULT_PAGINATION_COUNT);
+        return view('posts.index', ['title' => 'Posts', 'posts' => $posts]);
     }
 
     public function show(Post $post)

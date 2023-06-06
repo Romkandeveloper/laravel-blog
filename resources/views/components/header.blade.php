@@ -5,11 +5,11 @@
             <nav class="nav">
                 <a href="{{ route('dashboard') }}" class="nav__item">Home</a>
                 <a href="{{ route('posts.create') }}" class="nav__item">Create post</a>
-                <a href="#" class="nav__item">About</a>
-                <a href="#" class="nav__item">Works</a>
-                <a href="#" class="nav__item">Blog</a>
-                <a href="#" class="nav__item">Clients</a>
-                <a href="#" class="nav__item">Contact</a>
+                <span href="#" class="nav__item nav__item--disabled">About</span>
+                <span href="#" class="nav__item nav__item--disabled">Works</span>
+                <span href="#" class="nav__item nav__item--disabled">Blog</span>
+                <span href="#" class="nav__item nav__item--disabled">Clients</span>
+                <span href="#" class="nav__item nav__item--disabled">Contact</span>
             </nav>
         </div>
     </div>
