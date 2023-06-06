@@ -11,7 +11,6 @@ use Mockery\Exception;
 
 class PostsController extends Controller
 {
-    const DEFAULT_PAGINATION_COUNT = 5;
 
     public  $postsService;
 
@@ -22,7 +21,12 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(self::DEFAULT_PAGINATION_COUNT);
+        try {
+            $posts = $this->postsService->getPosts();
+        } catch (Exception $e) {
+            abort(500, 'Something went wrong');
+        }
+
         return view('posts.index', ['title' => 'Posts', 'posts' => $posts]);
     }
 
@@ -41,7 +45,7 @@ class PostsController extends Controller
         try {
             $post = $this->postsService->createPost($request->validated());
         } catch (Exception $e) {
-
+            abort(500, 'Something went wrong');
         }
 
         return redirect()->route('posts.show', ['post' => $post]);
@@ -57,7 +61,7 @@ class PostsController extends Controller
         try {
             $post = $this->postsService->updatePost($post, $request->validated());
         } catch (Exception $e) {
-
+            abort(500, 'Something went wrong');
         }
 
         return redirect()->route('posts.show', ['post' => $post]);
@@ -68,7 +72,7 @@ class PostsController extends Controller
         try {
             $this->postsService->deletePost($post);
         } catch (Exception $e) {
-
+            abort(500, 'Something went wrong');
         }
 
         return redirect('/');

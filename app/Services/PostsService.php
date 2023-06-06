@@ -7,37 +7,26 @@ use Illuminate\Support\Facades\DB;
 
 class PostsService {
 
+    const DEFAULT_PAGINATION_COUNT = 5;
+
+    public function getPosts()
+    {
+        return Post::orderBy('created_at', 'desc')->paginate(self::DEFAULT_PAGINATION_COUNT);
+    }
+
     public function createPost(array $postData)
     {
-        //some code...
-
-        $post = Post::create($postData);
-
-        //more code...
-
-        return $post;
+        return Post::create($postData);
     }
 
     public function updatePost(Post $post, array $postData)
     {
-        //some code...
-
-        $post->update($postData);
-
-        //more code...
-
-        return $post;
+        return $post->update($postData);
     }
 
     public function deletePost(Post $post)
     {
-        //some code...
-
-        $post->delete();
-
-        //more code...
-
-        return true;
+        return $post->delete();
     }
 }
 
