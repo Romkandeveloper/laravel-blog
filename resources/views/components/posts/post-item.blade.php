@@ -15,7 +15,11 @@
             <p>By <span class="card__text-color">Firstname</span> Lastname in <span class="card__text-color">Blog name</span></p>
         </div>
         <div class="card__text">
-            {{ $post->text }}
+            @if ($showText)
+                {{ $post->text }}
+            @else
+                {{ Str::limit($post->text, $limit = 500, $end = '...') }}
+            @endif
         </div>
 
         @if($showActions)

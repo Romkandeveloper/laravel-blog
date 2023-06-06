@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="card">
-                    @include('components.posts.post-item', ['showActions' => true])
+                    @include('components.posts.post-item', ['showActions' => true, 'showText' => true])
                 </div>
             </div>
         </section>

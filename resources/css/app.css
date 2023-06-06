@@ -1,3 +1,8 @@
+@import url("./header.css");
+@import url("./pagination.css");
+@import url("./post/card.css");
+@import url("./post/form.css");
+
 *,
 *:after,
 *:before {
@@ -31,32 +36,6 @@ a {
 
 .img {
     display: block
-}
-
-.header {
-    position: absolute;
-    top: 34px;
-    left: 0;
-    width: 100%
-}
-
-.header__logo {
-    font-size: 24px;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    color: #000000;
-}
-
-.header__inner {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: baseline;
-    -ms-flex-align: baseline;
-    align-items: baseline
 }
 
 .container {
@@ -122,63 +101,6 @@ a {
     margin: 27px auto
 }
 
-.info {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between
-}
-
-.info__item {
-    width: 100%;
-    max-width: 345px;
-    padding: 0 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center
-}
-
-.info__photo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    border: 2px solid #dddddd
-}
-
-.info__photo--red {
-    background-color: #c0301c
-}
-
-.info__name {
-    font-size: 14px;
-    font-weight: 700;
-    font-family: "Montserrat", sans-serif;
-    text-transform: uppercase;
-    margin: 29px 0 24px 0
-}
-
-.info__description {
-    text-align: center
-}
-
 .text {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -210,110 +132,6 @@ a {
     width: 100%;
     max-width: 454px;
     margin: 0 auto
-}
-
-.card__item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    border-bottom: 2px solid #dddddd;
-    padding: 35px 0px
-}
-
-.card .card__item:last-child {
-    padding-bottom: 0px;
-    border-bottom: 0px
-}
-
-.card .card__item:first-child {
-    padding-top: 0px
-}
-
-.card__photo {
-    margin-right: 38px
-}
-
-.card__header {
-    padding: 18px 0 0 100px;
-    margin-bottom: 22px;
-    position: relative
-}
-
-.card__title {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #c0301c;
-    margin-bottom: 17px
-}
-
-.card__text {
-    text-align: justify
-}
-
-.card__date {
-    position: absolute;
-    font-size: 12px;
-    width: 80px;
-    padding: 19px 22px;
-    top: 0;
-    left: 0;
-    border: 2px solid #555;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700
-}
-
-.card__btn {
-    text-transform: uppercase;
-    color: #c0301c;
-    position: relative;
-    display: inline-block;
-    margin-top: 33px;
-    -webkit-transition: color 0.2s ease;
-    -o-transition: color 0.2s ease;
-    transition: color 0.2s ease
-}
-
-.card__btn:hover {
-    color: #fff
-}
-
-.card__btn:hover:before {
-    width: 225%
-}
-
-.card__btn:before {
-    content: "";
-    z-index: -1;
-    position: absolute;
-    left: -100%;
-    top: -25%;
-    display: inline-block;
-    background-color: #c0301c;
-    width: 0%;
-    height: 150%;
-    -webkit-transition: width 0.2s ease;
-    -o-transition: width 0.2s ease;
-    transition: width 0.2s ease
-}
-
-.card__text-color {
-    color: #c0301c
-}
-
-.card__img-shadow {
-    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2)
 }
 
 .inners {
@@ -365,155 +183,6 @@ a {
     margin-bottom: 15px;
 }
 
-.form {
-    max-width: 730px;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    margin: 0 auto;
-}
-
-.form__input {
-    width: 100%;
-    border: 1px solid #555;
-    padding: 17px 0 17px 17px;
-    margin-bottom: 20px;
-    background-color: #fff;
-    outline: none
-}
-
-.form__input-danger {
-    background-color: #721c24;
-    color: #fff !important;
-}
-
-.form__input::-webkit-input-placeholder {
-    text-transform: uppercase;
-    font-size: 12px;
-    -webkit-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease
-}
-
-.form__input::-moz-placeholder {
-    text-transform: uppercase;
-    font-size: 12px;
-    -moz-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease
-}
-
-.form__input:-ms-input-placeholder {
-    text-transform: uppercase;
-    font-size: 12px;
-    -ms-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease
-}
-
-.form__input::-ms-input-placeholder {
-    text-transform: uppercase;
-    font-size: 12px;
-    -ms-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease
-}
-
-.form__input::placeholder {
-    text-transform: uppercase;
-    font-size: 12px;
-    -webkit-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
-    transition: opacity 0.3s ease
-}
-
-.form__input:focus {
-    border-color: #c0301c
-}
-
-.form__input:focus::-webkit-input-placeholder {
-    opacity: 0
-}
-
-.form__input:focus::-moz-placeholder {
-    opacity: 0
-}
-
-.form__input:focus:-ms-input-placeholder {
-    opacity: 0
-}
-
-.form__input:focus::-ms-input-placeholder {
-    opacity: 0
-}
-
-.form__input:focus::placeholder {
-    opacity: 0
-}
-
-.form__input-half {
-    width: 48%
-}
-
-.form__input-all {
-    padding: 17px 0 0 17px;
-    width: 100%;
-    height: 100px
-}
-
-.form__input-btn {
-    cursor: pointer;
-    color: #555;
-    text-transform: uppercase;
-    padding: 10px 33px
-}
-
-.form .form__input:nth-child(2n) {
-    margin-right: 0
-}
-
-.form .textarea {
-    font-family: "Roboto Slab", serif
-}
-
-.pagination {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.pagination .page-item {
-    display: inline-block;
-}
-
-.pagination .page-link {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-    color: #333;
-}
-
-.pagination .page-link:hover {
-    background-color: #f8f8f8;
-}
-
-.pagination .page-item.active .page-link {
-    background-color: #c0301c;
-    border-color: #c0301c;
-    color: #fff;
-}
-
-.pagination .page-item.disabled .page-link {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
 @media screen and (max-width: 1200px){
     .text{
         -webkit-box-orient:vertical;
@@ -534,17 +203,6 @@ a {
         max-width:750px;
         text-align:center
     }
-
-    .team{
-        display:none
-    }
-
-    .photos{
-        max-width:800px;
-        -webkit-box-pack:space-evenly;
-        -ms-flex-pack:space-evenly;
-        justify-content:space-evenly;
-    }
 }
 
 @media screen and (max-width:860px) {
@@ -564,33 +222,6 @@ a {
         font-size:15px
     }
 
-    .card__item{
-        -webkit-box-orient:vertical;
-        -webkit-box-direction:normal;
-        -ms-flex-direction:column;
-        flex-direction:column;
-        -webkit-box-align:center;
-        -ms-flex-align:center;
-        align-items:center
-    }
-
-    .card__photo{
-        margin:0 0 10px 0
-    }
-
-    .card__img-shadow{
-        max-width:100%
-    }
-
-    .card__description{
-        max-width:460px;
-        width: 100%;
-    }
-
-    .card__btn{
-        margin-top:20px
-    }
-
     .inners{
         -webkit-box-orient:vertical;
         -webkit-box-direction:normal;
@@ -605,23 +236,6 @@ a {
         display:flex;
         -ms-flex-pack:distribute;
         justify-content:space-around
-    }
-
-    .form{
-        width:100%;
-        max-width:none;
-        display:-webkit-box;
-        display:-ms-flexbox;
-        display:flex;
-        -webkit-box-orient:vertical;
-        -webkit-box-direction:normal;
-        -ms-flex-direction:column;
-        flex-direction:column;
-        margin: 0 auto;
-    }
-
-    .form__input{
-        width:100%;
     }
 }
 

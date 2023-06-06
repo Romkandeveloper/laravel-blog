@@ -11,7 +11,7 @@
 
                 <div class="card">
                     @foreach ($posts as $post)
-                        @include('components.posts.post-item', ['showActions' => false])
+                        @include('components.posts.post-item', ['showActions' => false, 'showText' => false])
                     @endforeach
                 </div>
 
